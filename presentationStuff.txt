@@ -1,0 +1,12 @@
+Mutex Implementation:
+			//locked := atomic.CompareAndSwapInt32(mutexPtr, 0, 1)
+			//for !locked {
+				//locked = atomic.CompareAndSwapInt32(mutexPtr, 0, 1)
+			//}
+			//	"sync/atomic"
+			
+Mutex:
+		//var mutex sync.Mutex
+		//mutex.Lock()
+		//mutex.Unlock()
+		
