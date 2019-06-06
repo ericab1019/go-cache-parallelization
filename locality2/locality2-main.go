@@ -20,9 +20,9 @@ func main() {
 		readArr=append(readArr, rand.Intn(50))
 	}
 		
-	for i:=0; i<loopsize; i++ {
+	for j:=0; j<loopsize; j++ {
 		
-		for j:=0; j<loopsize; j++ {
+		for i:=0; i<loopsize; i++ {
 			intArr[i][j] += i+readArr[j]
 		}
 	}
