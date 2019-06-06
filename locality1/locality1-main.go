@@ -8,10 +8,10 @@ import (
 
 //with blocking by blocksize runs in about 10s, without blocksize lose spatial locality and takes 17s
 func main() {
-	blocksize:=8
+	//blocksize:=8
 	start:=time.Now()
 	
-	loopsize := 100000
+	loopsize := 40000
 	
 	var intArr []int
 	
@@ -24,17 +24,18 @@ func main() {
 		readArr=append(readArr, rand.Intn(50))
 	}
 	
-	for j2:=0; j2<loopsize; j2=j2+blocksize {
+	//for j2:=0; j2<loopsize; j2=j2+blocksize {
 		
-		for i:=0; i<loopsize; i++ {
-			
-			//for j:=0; j<loopsize; j++ {
-			
-			for j:=j2; j<j2+blocksize; j++ {
-				intArr[i] += i+readArr[j]
-			}
+	for i:=0; i<loopsize; i++ {
+		
+		for j:=0; j<loopsize; j++ {
+			intArr[i] += i+readArr[j]
 		}
 	}
+		//for j:=j2; j<j2+blocksize; j++ {
+			//intArr[i] += i+readArr[j]	
+		//}
+	//}
 	t:=time.Now()
 	fmt.Println(t.Sub(start));
 }
